@@ -1,6 +1,7 @@
 package com.elkafrawyel;
 //
 
+import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.res.Configuration;
@@ -27,6 +28,7 @@ import android.widget.OverScroller;
 import android.widget.Scroller;
 
 //
+@SuppressLint("AppCompatCustomView")
 public class ZoomImageView extends ImageView {
 
     private static final String DEBUG = "DEBUG";
@@ -403,9 +405,9 @@ public class ZoomImageView extends ImageView {
      * Set zoom parameters equal to another TouchImageView. Including scale, position,
      * and ScaleType.
      *
-     * @param TouchImageView
-     */
-    public void setZoom(TouchImageView img) {
+     * @paramZoomImageView
+     **/
+    public void setZoom(ZoomImageView img) {
         PointF center = img.getScrollPosition();
         setZoom(img.getCurrentZoom(), center.x, center.y, img.getScaleType());
     }
